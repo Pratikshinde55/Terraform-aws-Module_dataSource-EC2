@@ -17,6 +17,7 @@ provider "aws" {
 module "ps1A" {
   source = "../module/ec2"
    tagname = "myosteamA"
+   OStype = "t2.micro"
 }
 
 
@@ -39,6 +40,7 @@ provider "aws" {
 module "ps1A" {
   source = "../module/ec2"
   tagname = "teamB"
+   OStype = "t2.large"
 }
 
 ############################### Team-c #################
@@ -61,6 +63,7 @@ provider "aws" {
 module "TeamC-ps" {
   source = "../module/ec2"
   tagname = "teamC"
+   OStype = "t2.small"
 }
 
 
