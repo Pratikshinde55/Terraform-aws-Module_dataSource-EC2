@@ -15,10 +15,18 @@ provider "aws" {
   profile = "default"
 }
 
-################## module block -- call ec2 module ###########
+################## module block -- call ec2 module---- teamA ###########
 
 module "ps1A" {
   source = "../module/ec2"
    tagname = "myosteamA"
 }
+
+
+#########   teamB  #######
+module "ps1A" {
+  source = "../module/ec2"
+  tagname = "teamB"
+}
+
 
