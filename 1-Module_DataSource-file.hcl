@@ -26,7 +26,7 @@ data "aws_ami" "amazonaminame" {
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.amazonaminame.id
   vpc_security_group_ids = [aws_security_group.allow.id]
-  instance_type          = "t2.micro"
+  instance_type          = var.OStype
   tags = {
     Name = var.tagname
   }
@@ -36,4 +36,7 @@ variable "tagname" {
 
 }
 
+variable "OStype" {
+
+}
 
