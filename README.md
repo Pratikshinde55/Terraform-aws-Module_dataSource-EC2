@@ -1,2 +1,2 @@
 # Terraform-aws-module-dataSource-
-Terraform IaC for creating Ec2 , aws_ami by data source and create own module and used for TeamA &amp; TeamB 
+Creating a Terraform module for deploying secure EC2 instances with proper security configurations, including the utilization of the AWS AMI data source. This module can be easily invoked by other team members using Terraform module blocks
