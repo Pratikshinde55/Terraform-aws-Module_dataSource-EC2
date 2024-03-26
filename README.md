@@ -64,7 +64,8 @@ terraform apply cmd for to create entire infrastucture as code:
 
 ❄️TeamB calling module for launch instance ❄️
 
+create main.tf file for plugin with AWS provider , credentials, "module block calling"
 
-
+![tf-TeamB-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/5661114d-6f2c-4211-9c7b-6c5c4c7dc2c1)
 
 
