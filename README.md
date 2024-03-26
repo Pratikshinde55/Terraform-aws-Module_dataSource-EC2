@@ -56,6 +56,8 @@ terraform init  coomand use to piugins
 
 terraform apply cmd for to create entire infrastucture as code:
 
+       #terraform apply
+
 ![tf-TeamA-apply](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/c1d47f95-db17-4f9e-9519-ff82d0614b2e)
 
 
