@@ -69,3 +69,33 @@ create main.tf file for plugin with AWS provider , credentials, "module block ca
 ![tf-TeamB-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/5661114d-6f2c-4211-9c7b-6c5c4c7dc2c1)
 
 
+terraform init  coomand use to piugins 
+
+       # terraform init
+
+terraform apply cmd for to create entire infrastucture as code:
+
+       #terraform apply
+
+![tf-TeamB-apply](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/991b9074-d8fc-4123-8b3a-b3b0910a36fe)
+
+
+❄️TeamC calling module for launch instance ❄️
+
+create main.tf file for plugin with AWS provider , credentials, "module block calling"
+
+![tf-TeamC-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/82bbbe04-4bf6-402c-9cea-c37fe0ac1939)
+
+terraform init  coomand use to piugins 
+
+       # terraform init
+
+terraform apply cmd for to create entire infrastucture as code:
+
+       #terraform apply
+       
+![tf-TeamC-apply](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/6dcfeda5-3499-414c-b988-ebfe2bc5a449)
+
+
+
+
