@@ -1,15 +1,10 @@
-# varible
-variable "sgports" {
-  type    = list(number)
-  default = [22, 8080, 80, 1234]
-}
 
-#allow inbound traffic
+############################...."allow inbound traffic"....##################
 
 resource "aws_security_group" "allow" {
-  name        = "terra_allow"
+  name        = "terra_allow_${var.security_grp_name}"
   description = " allow inbound "
-  vpc_id      = "vpc-071ddf3f50a17a539"
+  vpc_id      = var.vpcID
 
    dynamic "ingress" {
      for_each = var.sgports
@@ -29,5 +24,25 @@ resource "aws_security_group" "allow" {
       protocol    = "-1"
       cidr_blocks = ["0.0.0.0/0"]
     }
+
+}
+
+################# varible
+variable "sgports" {
+  type    = list(number)
+  default = [22, 8080, 80, 1234]
+}
+
+
+# "varible for security group name "
+
+variable "security_grp_name" {
+      type    = string
+
+}
+
+ # "varible for VPC id "
+
+variable "vpcID" {
 
 }
