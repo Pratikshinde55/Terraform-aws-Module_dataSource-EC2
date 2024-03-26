@@ -49,6 +49,17 @@ create main.tf file for plugin with AWS provider , credentials, "module block ca
 
 ![tf-TeamA-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/0b228b65-cff4-4568-81e5-128ed7b64d0a)
 
+terraform init  coomand use to piugins 
+
+
+       # terraform init
+
+terraform apply cmd for to create entire infrastucture as code:
+
+![tf-TeamA-apply](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/c1d47f95-db17-4f9e-9519-ff82d0614b2e)
+
+
+
 
 
 
