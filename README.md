@@ -96,6 +96,12 @@ terraform apply cmd for to create entire infrastucture as code:
        
 ![tf-TeamC-apply](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/6dcfeda5-3499-414c-b988-ebfe2bc5a449)
 
+🌟On AWS console 🌟
+
+Instances is lanuched by TeamA, TeamB, TeamC :
+
+![Screenshot 2024-03-26 225352](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/dc408713-a2c1-40a8-bd44-d643095927fb)
+
 
 
 
