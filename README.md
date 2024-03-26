@@ -19,6 +19,8 @@ Inside the module folder one more folder created named as 'ec2-module' here i ke
 
 ![image](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/bd7e3d76-90a6-44c4-9db9-12bc1aca5e91)
 
+❄️ Modules steps are following ❄️
+
 Step-1: 
 
 create main.tf file for ec2 instance and ami_id retrieving data source :
@@ -40,5 +42,6 @@ create variables.tf file for varibles of main.tf & sec_grp.tf (in HCL file i pro
 ![tf-ec2-variables](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/bbc47f63-79ec-4275-8426-65bd68138e51)
 
 
+❄️TeamA calling module for launch instance ❄️
 
 
