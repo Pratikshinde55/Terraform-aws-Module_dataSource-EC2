@@ -112,5 +112,12 @@ seg_grp for TeamA :
 
 ![Screenshot 2024-03-26 222944](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/a449e0aa-0d7d-4502-84ec-96820d944567)
 
+seg_grp for TeamB :
+
+![Screenshot 2024-03-26 223010](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/1da6ffda-36d9-4b16-a495-8c3e8a1e6b09)
+
+seg_grp for TeamC :
+
+![Screenshot 2024-03-26 223038](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/7aabc04e-941f-4a7a-9816-b2156ab60e19)
 
 
