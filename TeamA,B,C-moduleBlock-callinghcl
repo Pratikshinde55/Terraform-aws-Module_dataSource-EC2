@@ -41,7 +41,7 @@ provider "aws" {
 }
 
 module "TeamB-calling-ec2_module" {
-  source = "../module/ec2"
+  source = "../module/ec2-module"
   tagname = "OS-by-TeamB"
    OStype = "t2.medium"
 }
@@ -64,7 +64,7 @@ provider "aws" {
 
 
 module "TeamB-calling-ec2_module" {
-  source = "../module/ec2"
+  source = "../module/ec2-module"
   tagname =  "OS-by-TeamC"
    OStype = "t2.small"
 }
