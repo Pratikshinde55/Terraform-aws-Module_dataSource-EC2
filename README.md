@@ -17,3 +17,9 @@ Follwing is lists of folders for this project:
 
 ![tf-team_files](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/01157df0-80e1-46ab-bce5-aa802e5f3dfa)
 
+Inside the module folder one more folder created named as 'ec2-module' here i kept my Modules.
+
+![image](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/bd7e3d76-90a6-44c4-9db9-12bc1aca5e91)
+
+
+
