@@ -1,4 +1,5 @@
 ####################  team-A #######  
+
 terraform {
   required_providers {
     aws = {
@@ -13,12 +14,14 @@ provider "aws" {
   profile = "default"
 }
 
+#module-calling block
 
 module "ps1A" {
-  source = "../module/ec2"
-   tagname = "myosteamA"
-   OStype = "t2.micro"
+  source  = "../module/ec2-module"
+  tagname = "OS-by-TeamA"
+  OStype  = "t2.micro"
 }
+
 
 
 ####################   teamB  #######
@@ -37,9 +40,9 @@ provider "aws" {
   profile = "default"
 }
 
-module "ps1A" {
+module "TeamB-calling-ec2_module" {
   source = "../module/ec2"
-  tagname = "teamB"
+  tagname = "OS-by-TeamB"
    OStype = "t2.medium"
 }
 
@@ -60,9 +63,9 @@ provider "aws" {
 }
 
 
-module "TeamC-ps" {
+module "TeamB-calling-ec2_module" {
   source = "../module/ec2"
-  tagname = "teamC"
+  tagname =  "OS-by-TeamC"
    OStype = "t2.small"
 }
 
