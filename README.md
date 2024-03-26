@@ -21,11 +21,17 @@ Inside the module folder one more folder created named as 'ec2-module' here i ke
 
 Step-1: 
 
-create tf file for ec2 instance and ami_id retrieving data source :
+create main.tf file for ec2 instance and ami_id retrieving data source :
 
 
 ![tf-ec2_module_dataSource-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/f80a11e9-fd2b-4037-933a-042c79919846)
 
+
+Step-2:
+
+create tf sec_grp.tf file for security group details , here use loop 
+
+![tf-sec_grp-module](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/79923a65-b1ac-472a-a642-bbba1f9395df)
 
 
 
