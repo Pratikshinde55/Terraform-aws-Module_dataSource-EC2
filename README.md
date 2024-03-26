@@ -98,10 +98,10 @@ terraform apply cmd for to create entire infrastucture as code:
 
 🌟On AWS console 🌟
 
-Instances is lanuched by TeamA, TeamB, TeamC :
+Instances is lanuched by 
 
 ![Screenshot 2024-03-26 225352](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/dc408713-a2c1-40a8-bd44-d643095927fb)
 
 
-
+Also security group is created by 
 
