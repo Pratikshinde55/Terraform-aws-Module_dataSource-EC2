@@ -47,7 +47,8 @@ create variables.tf file for varibles of main.tf & sec_grp.tf (in HCL file i pro
 create main.tf file for plugin with AWS provider , credentials, "module block calling"
 
 
-![tf-TeamA-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/dca9a139-2cee-4d4e-a05d-a28f5a86787b)
+![tf-TeamA-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/0b228b65-cff4-4568-81e5-128ed7b64d0a)
+
 
 
 
