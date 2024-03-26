@@ -27,21 +27,22 @@ resource "aws_security_group" "allow" {
 
 }
 
-################# varible
+################# varibles ###############
+
 variable "sgports" {
   type    = list(number)
   default = [22, 8080, 80, 1234]
 }
 
 
-# "varible for security group name "
+### "varible for security group name "
 
 variable "security_grp_name" {
       type    = string
 
 }
 
- # "varible for VPC id "
+ ### "varible for VPC id "
 
 variable "vpcID" {
 
