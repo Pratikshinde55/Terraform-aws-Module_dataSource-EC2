@@ -62,6 +62,9 @@ terraform apply cmd for to create entire infrastucture as code:
 
 
 
+❄️TeamB calling module for launch instance ❄️
+
+
 
 
 
