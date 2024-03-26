@@ -11,3 +11,9 @@ This project for creating Infrasture of following
 3. "Here gives variables 
 
    NOTE: This modules kept in seperate folder and this modules will be called by TeamA, TeamB, TeamC for lanching instance
+
+
+Follwing is lists of folders for this project:
+
+![tf-team_files](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/01157df0-80e1-46ab-bce5-aa802e5f3dfa)
+
