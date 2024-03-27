@@ -46,7 +46,7 @@ create main.tf file for ec2 instance and ami_id retrieving data source :
 
 create tf sec_grp.tf file for security group details , here use loop:
 
-  In file AWS security group resource named "allow" is defined.
+  "aws_security_group" =  AWS security group resource named "allow" is defined for create security group.
   
   The "name" attribute is set to "terra_allow_" followed by the value of the variable "security_grp_name", likely creating a unique name for the security group.
   
@@ -54,13 +54,25 @@ create tf sec_grp.tf file for security group details , here use loop:
 
   The "vpc_id" attribute is set to the value of the variable "vpcID", specifying the VPC in which the security group is to be created.
 
-  Inside a dynamic block, the "ingress" block is defined to allow inbound traffic, Dynamic is make to manage ingress block dyanamically.
+  "ingress" block = Inside a dynamic block, the "ingress" block is defined to allow inbound traffic, Dynamic is make to manage ingress block dyanamically.(ingress = inbound rule)
 
   The "for_each" argument iterates over each element in the list of ports. for each is type of loop, var.sgports varible for providing lists of port numbers,
 
   The "iterator" argument assigns a name to the current element in the iteration, which is referenced as "port" within the block.
 
   "Content" is block of dynamic block where we put things which want to manage dynamically.
+
+  "protocol": Specifies the protocol for the traffic, in this case, "tcp.
+
+  "cidr_blocks": Allows traffic from any source IP ("0.0.0.0/0").
+
+  "egress" block = which control outbound traffic from the instances associated with the security group.
+
+  The "from_port" and "to_port" attributes are set to 0, indicating that all ports are allowed for outbound traffic.
+
+  The "protocol" attribute is set to "-1", indicating that all protocols are allowed for outbound traffic.
+
+  The "cidr_blocks" attribute is set to ["0.0.0.0/0"], allowing outbound traffic to any destination IP address.
 
     #notepad sec_grp.tf &
 
