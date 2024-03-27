@@ -40,7 +40,7 @@ create main.tf file for ec2 instance and ami_id retrieving data source :
 
   "Filter": is sub block of data source for specify 'data type' information.
 
-  Three filters are applied for AMIs:
+  ✧Three filters are applied for AMIs:
   
    AMI name matching the pattern "al2023-ami-*-x86_64".
    
