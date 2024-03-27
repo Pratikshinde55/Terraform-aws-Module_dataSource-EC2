@@ -27,7 +27,7 @@ Inside the module folder one more folder created named as 'ec2-module' here i ke
   In module folder only put code of infrastucture & and apply this infrastructure in others folder named as TeamA, TeamB, TeamC.
 
 ⚡Step-1:⚡ 
-
+ 
 create main.tf file for ec2 instance and ami_id retrieving data source :
 
   In this file contain 'Data source' "aws_ami" for retrieving ami id for instance , The information retrieve before resource creates is known as Data source.
