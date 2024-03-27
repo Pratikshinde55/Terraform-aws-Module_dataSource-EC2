@@ -68,9 +68,9 @@ create tf sec_grp.tf file for security group details , here use loop:
 
   ✧"egress" block = which control outbound traffic from the instances associated with the security group.
 
-    "from_port" and "to_port": attributes are set to 0, indicating that all ports are allowed for outbound traffic.
+  "from_port" and "to_port": attributes are set to 0, indicating that all ports are allowed for outbound traffic.
 
-    "protocol": attribute is set to "-1", indicating that all protocols are allowed for outbound traffic.
+  "protocol": attribute is set to "-1", indicating that all protocols are allowed for outbound traffic.
 
   "cidr_blocks": attribute is set to ["0.0.0.0/0"], allowing outbound traffic to any destination IP address.
 
