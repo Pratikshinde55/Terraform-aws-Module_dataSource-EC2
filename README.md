@@ -32,9 +32,9 @@ create main.tf file for ec2 instance and ami_id retrieving data source :
 
   In this file contain 'Data source' "aws_ami" for retrieving ami id for instance , The information retrieve before resource creates is known as Data source.
 
-  "Filter" is sub block of data source for specify 'data type' information.
+  "Filter": is sub block of data source for specify 'data type' information.
 
-   "ami" attribute of the "aws_instance" resource is being assigned the value of 'data.aws_ami.amazonaminame.id' attribute referance this take ami id form data block.
+   "ami": attribute of the "aws_instance" resource is being assigned the value of 'data.aws_ami.amazonaminame.id' attribute referance this take ami id form data block.
 
        #notepad main.tf
 
