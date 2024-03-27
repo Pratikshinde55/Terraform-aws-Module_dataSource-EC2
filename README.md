@@ -26,7 +26,7 @@ Inside the module folder one more folder created named as 'ec2-module' here i ke
 
   In module folder only put code of infrastucture & and apply this infrastructure in others folder named as TeamA, TeamB, TeamC.
 
-Step-1: 
+⚡Step-1:⚡ 
 
 create main.tf file for ec2 instance and ami_id retrieving data source :
 
@@ -36,7 +36,7 @@ create main.tf file for ec2 instance and ami_id retrieving data source :
 ![tf-ec2_module_dataSource-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/f80a11e9-fd2b-4037-933a-042c79919846)
 
 
-Step-2:
+⚡Step-2:⚡
 
 create tf sec_grp.tf file for security group details , here use loop 
 
@@ -44,7 +44,7 @@ create tf sec_grp.tf file for security group details , here use loop
 
 ![tf-sec_grp-module](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/79923a65-b1ac-472a-a642-bbba1f9395df)
 
-Step-3:
+⚡Step-3:⚡
 
 create variables.tf file for varibles of main.tf & sec_grp.tf (in HCL file i provided i keep varibles in modules not created separate file:
 
