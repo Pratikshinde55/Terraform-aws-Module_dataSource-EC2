@@ -90,7 +90,7 @@ create variables.tf file for varibles of main.tf & sec_grp.tf (in HCL file i pro
 ![tf-ec2-variables](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/bbc47f63-79ec-4275-8426-65bd68138e51)
 
 
-❄️TeamA calling module for launch instance ❄️
+                                            ❄️TeamA calling module for launch instance ❄️
 
 create main.tf file for plugin with AWS provider , credentials, "module block calling"
 
