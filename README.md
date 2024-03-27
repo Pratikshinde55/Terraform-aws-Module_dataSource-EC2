@@ -26,6 +26,8 @@ Inside the module folder one more folder created named as 'ec2-module' here i ke
 
   In module folder only put code of infrastucture & and apply this infrastructure in others folder named as TeamA, TeamB, TeamC.
 
+  "Filter" is sub block of data source for specify 'data type' information.
+
 ⚡Step-1:⚡ 
 
 create main.tf file for ec2 instance and ami_id retrieving data source :
