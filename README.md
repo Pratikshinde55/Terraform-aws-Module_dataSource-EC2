@@ -44,7 +44,23 @@ create main.tf file for ec2 instance and ami_id retrieving data source :
 
 ⚡Step-2:⚡
 
-create tf sec_grp.tf file for security group details , here use loop 
+create tf sec_grp.tf file for security group details , here use loop:
+
+  In file AWS security group resource named "allow" is defined.
+  
+  The "name" attribute is set to "terra_allow_" followed by the value of the variable "security_grp_name", likely creating a unique name for the security group.
+  
+  The "description" attribute is set to describe the purpose of the security group.
+
+  The "vpc_id" attribute is set to the value of the variable "vpcID", specifying the VPC in which the security group is to be created.
+
+  Inside a dynamic block, the "ingress" block is defined to allow inbound traffic, Dynamic is make to manage ingress block dyanamically.
+
+  The "for_each" argument iterates over each element in the list of ports. for each is type of loop, var.sgports varible for providing lists of port numbers,
+
+  The "iterator" argument assigns a name to the current element in the iteration, which is referenced as "port" within the block.
+
+  "Content" is block of dynamic block where we put things which want to manage dynamically.
 
     #notepad sec_grp.tf &
 
