@@ -24,6 +24,8 @@ Step-1:
 
 create main.tf file for ec2 instance and ami_id retrieving data source :
 
+       #notepad main.tf
+
 
 ![tf-ec2_module_dataSource-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/f80a11e9-fd2b-4037-933a-042c79919846)
 
