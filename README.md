@@ -1,11 +1,12 @@
 # Terraform-aws-module-dataSource-
-Creating a Terraform module for deploying secure EC2 instances with proper security configurations, including the utilization of the AWS AMI data source. This module can be easily invoked by other team members using Terraform module blocks
+ Creating a Terraform module for deploying secure EC2 instances with proper security configurations, including the utilization of the AWS AMI data source. This 
+ module can be easily invoked by other team members using Terraform module blocks
 
 ![image](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/7b0f0e91-6dda-4945-be1a-78c5368012d1)
 
 
 
-This project for creating Infrasture of following 
+This project for creating Infrasture of following:--
 
 1. "Module-1 for EC2 instance", don't need to define ami_id for instance because here terraform "Data source" is used for retrieving ami_id for instance,
   This is name of ami_id for Free tier amazon linux ami (al2023-ami-*-x86_64); 'variables for name of instance & instance type'.
@@ -14,7 +15,8 @@ This project for creating Infrasture of following
 
       NOTE: This modules kept in seperate folder and this modules will be called by TeamA, TeamB, TeamC for lanching instance
 
-4. "calling module block by using module block for launching EC2 instance with security group" for calling I created three Team folder where i put individual plugins info and calling module blocks.
+4. "calling module block by using module block for launching EC2 instance with security group" for calling I created three Team folder where i put individual 
+ plugins info and calling module blocks.
 
 Follwing is lists of folders for this project:
 
@@ -32,9 +34,14 @@ create main.tf file for ec2 instance and ami_id retrieving data source :
 
   In this file contain 'Data source' "aws_ami" for retrieving ami id for instance , The information retrieve before resource creates is known as Data source.
 
+  "most_recent": is set to true, indicating that the most recent version of the AMI should be used.
+
+  "owners": is set to ["amazon"], specifying that only AMIs owned by Amazon should be considered.
+
   "Filter": is sub block of data source for specify 'data type' information.
 
-   "ami": attribute of the "aws_instance" resource is being assigned the value of 'data.aws_ami.amazonaminame.id' attribute referance this take ami id form data block.
+   "ami": attribute of the "aws_instance" resource is being assigned the value of 'data.aws_ami.amazonaminame.id' attribute referance this take ami id form data 
+   block.
 
        #notepad main.tf
 
@@ -54,7 +61,8 @@ create tf sec_grp.tf file for security group details , here use loop:
 
    "vpc_id": attribute is set to the value of the variable "vpcID", specifying the VPC in which the security group is to be created.
 
-  ✧"ingress" = block Inside a dynamic block, the "ingress" block is defined to allow inbound traffic, Dynamic is make to manage ingress block dyanamically.(ingress = inbound rule)
+  ✧"ingress" = block Inside a dynamic block, the "ingress" block is defined to allow inbound traffic, Dynamic is make to manage ingress block dyanamically. 
+  (ingress = inbound rule)
 
    "for_each": argument iterates over each element in the list of ports. for each is type of loop, var.sgports varible for providing lists of port numbers,
 
