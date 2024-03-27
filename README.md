@@ -92,7 +92,19 @@ create variables.tf file for varibles of main.tf & sec_grp.tf (in HCL file i pro
 
                                             ❄️TeamA calling module for launch instance ❄️
 
-create main.tf file for plugin with AWS provider , credentials, "module block calling"
+create main.tf file for plugin with AWS provider , credentials, "module block calling":
+
+✧Here "terraform" block for plugin with AWS provider, "provider" block for credentials (AAWS CLI tool used for access & secret key of AMI user.
+
+✦ "module" = block for calling module , 
+
+ "source": attribute specifies the relative path to the directory containing the module configuration. In this case, it's "../module/ec2-module".
+
+ "tagname": This module varible for name instance tag.
+
+ "OStype": this is for type of instance such t2.micro , t2.large ,etc.
+
+ "security_grp_name": this is for name security grp which connect to EC2 instance.
 
 
 ![tf-TeamA-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/0b228b65-cff4-4568-81e5-128ed7b64d0a)
@@ -110,11 +122,10 @@ terraform apply cmd for to create entire infrastucture as code:
 
 
 
-❄️TeamB calling module for launch instance ❄️
+                                         ❄️TeamB calling module for launch instance ❄️
 
 create main.tf file for plugin with AWS provider , credentials, "module block calling"
 
-✧ Here "terraform" block for plugin with aws providers and "provider" block for credentials(I used AWS CLI tool in local for IAM access & secreate key), 
 
 ![tf-TeamB-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/5661114d-6f2c-4211-9c7b-6c5c4c7dc2c1)
 
@@ -130,7 +141,7 @@ terraform apply cmd for to create entire infrastucture as code:
 ![tf-TeamB-apply](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/991b9074-d8fc-4123-8b3a-b3b0910a36fe)
 
 
-❄️TeamC calling module for launch instance ❄️
+                                          ❄️TeamC calling module for launch instance ❄️
 
 create main.tf file for plugin with AWS provider , credentials, "module block calling"
 
