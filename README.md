@@ -40,6 +40,14 @@ create main.tf file for ec2 instance and ami_id retrieving data source :
 
   "Filter": is sub block of data source for specify 'data type' information.
 
+  Three filters are applied for AMIs:
+  
+   AMI name matching the pattern "al2023-ami-*-x86_64".
+   
+   Root device type is set to "ebs".
+   
+   Virtualization type is set to "hvm".
+
    "ami": attribute of the "aws_instance" resource is being assigned the value of 'data.aws_ami.amazonaminame.id' attribute referance this take ami id form data 
    block.
 
