@@ -54,7 +54,7 @@ create tf sec_grp.tf file for security group details , here use loop:
 
    "vpc_id": attribute is set to the value of the variable "vpcID", specifying the VPC in which the security group is to be created.
 
-  ✧"ingress" block = Inside a dynamic block, the "ingress" block is defined to allow inbound traffic, Dynamic is make to manage ingress block dyanamically.(ingress = inbound rule)
+  ✧"ingress" = block Inside a dynamic block, the "ingress" block is defined to allow inbound traffic, Dynamic is make to manage ingress block dyanamically.(ingress = inbound rule)
 
    "for_each": argument iterates over each element in the list of ports. for each is type of loop, var.sgports varible for providing lists of port numbers,
 
@@ -66,7 +66,7 @@ create tf sec_grp.tf file for security group details , here use loop:
 
    "cidr_blocks": Allows traffic from any source IP ("0.0.0.0/0").
 
-  ✧"egress" block = which control outbound traffic from the instances associated with the security group.
+  ✧"egress" = block which control outbound traffic from the instances associated with the security group.
 
   "from_port" and "to_port": attributes are set to 0, indicating that all ports are allowed for outbound traffic.
 
