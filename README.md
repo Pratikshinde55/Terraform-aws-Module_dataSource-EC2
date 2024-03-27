@@ -34,6 +34,8 @@ Step-2:
 
 create tf sec_grp.tf file for security group details , here use loop 
 
+    #notepad sec_grp.tf &
+
 ![tf-sec_grp-module](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/79923a65-b1ac-472a-a642-bbba1f9395df)
 
 Step-3:
