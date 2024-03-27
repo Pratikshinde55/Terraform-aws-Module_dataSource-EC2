@@ -1,6 +1,8 @@
 # Terraform-aws-module-dataSource-
 Creating a Terraform module for deploying secure EC2 instances with proper security configurations, including the utilization of the AWS AMI data source. This module can be easily invoked by other team members using Terraform module blocks
 
+![image](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/9b087e64-5b51-44f9-8bd9-f4ff007f3759)
+
 This project for creating Infrasture of following 
 
 1. "Module-1 for EC2 instance", don't need to define ami_id for instance because here terraform "Data source" is used for retrieving ami_id for instance,
