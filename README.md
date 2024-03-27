@@ -22,7 +22,7 @@ Inside the module folder one more folder created named as 'ec2-module' here i ke
 
 ![image](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/bd7e3d76-90a6-44c4-9db9-12bc1aca5e91)
 
-❄️ Modules steps are following ❄️
+                                          ❄️ Modules steps are following ❄️
 
   In module folder only put code of infrastucture & and apply this infrastructure in others folder named as TeamA, TeamB, TeamC.
 
@@ -97,7 +97,7 @@ create main.tf file for plugin with AWS provider , credentials, "module block ca
 
 ![tf-TeamA-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/0b228b65-cff4-4568-81e5-128ed7b64d0a)
 
-terraform init  coomand use to piugins 
+terraform init  coomand use to plugin 
 
 
        # terraform init
@@ -113,6 +113,8 @@ terraform apply cmd for to create entire infrastucture as code:
 ❄️TeamB calling module for launch instance ❄️
 
 create main.tf file for plugin with AWS provider , credentials, "module block calling"
+
+✧ Here "terraform" block for plugin with aws providers and "provider" block for credentials(I used AWS CLI tool in local for IAM access & secreate key), 
 
 ![tf-TeamB-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/5661114d-6f2c-4211-9c7b-6c5c4c7dc2c1)
 
