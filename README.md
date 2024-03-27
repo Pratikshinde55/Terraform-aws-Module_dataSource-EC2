@@ -8,7 +8,7 @@ This project for creating Infrasture of following
 
 2. "Module-2 for aws_security_grp" which allow inbound traffic to EC2; 'variables for VPC id & security grp name'.
 
-3. "Here gives variables 
+3. "calling module block by using module block for launching EC2 instance with security group" for calling I created three Team folder where i put individual plugins info and calling module blocks.
 
    NOTE: This modules kept in seperate folder and this modules will be called by TeamA, TeamB, TeamC for lanching instance
 
