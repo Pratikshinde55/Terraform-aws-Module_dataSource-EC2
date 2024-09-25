@@ -53,34 +53,34 @@ block.
 
 ### Step-2: [Create tf sec_grp.tf file for security group details , here use loop:]
 
-"aws_security_group" =  AWS security group resource named "allow" is defined for create security group.
+**"aws_security_group"** =  AWS security group resource named "allow" is defined for create security group.
   
-"name": attribute is set to "terra_allow_" followed by the value of the variable "security_grp_name", likely creating a unique name for the security group.
+**"name"**: attribute is set to "terra_allow_" followed by the value of the variable "security_grp_name", likely creating a unique name for the security group.
   
-"description": attribute is set to describe the purpose of the security group.
+**"description"**: attribute is set to describe the purpose of the security group.
 
-vpc_id": attribute is set to the value of the variable "vpcID", specifying the VPC in which the security group is to be created.
+**"vpc_id"**: attribute is set to the value of the variable "vpcID", specifying the VPC in which the security group is to be created.
 
-"ingress" = block Inside a dynamic block, the "ingress" block is defined to allow inbound traffic, Dynamic is make to manage ingress block dyanamically. 
+**"ingress"** = block Inside a dynamic block, the "ingress" block is defined to allow inbound traffic, Dynamic is make to manage ingress block dyanamically. 
   (ingress = inbound rule)
 
-"for_each": argument iterates over each element in the list of ports. for each is type of loop, var.sgports varible for providing lists of port numbers,
+**"for_each"**: argument iterates over each element in the list of ports. for each is type of loop, var.sgports varible for providing lists of port numbers,
 
-"iterator": argument assigns a name to the current element in the iteration, which is referenced as "port" within the block.
+**"iterator"**: argument assigns a name to the current element in the iteration, which is referenced as "port" within the block.
 
-"Content"= block of dynamic block where we put things which want to manage dynamically.
+**"Content"** = block of dynamic block where we put things which want to manage dynamically.
 
-"protocol": Specifies the protocol for the traffic, in this case, "tcp.
+**"protocol"**: Specifies the protocol for the traffic, in this case, "tcp.
 
-"cidr_blocks": Allows traffic from any source IP ("0.0.0.0/0").
+**"cidr_blocks"**: Allows traffic from any source IP ("0.0.0.0/0").
 
-"egress" = block which control outbound traffic from the instances associated with the security group.
+**"egress"** = block which control outbound traffic from the instances associated with the security group.
 
-"from_port" and "to_port": attributes are set to 0, indicating that all ports are allowed for outbound traffic.
+**"from_port"** and **"to_port"**: attributes are set to 0, indicating that all ports are allowed for outbound traffic.
 
-"protocol": attribute is set to "-1", indicating that all protocols are allowed for outbound traffic.
+**"protocol"**: attribute is set to "-1", indicating that all protocols are allowed for outbound traffic.
 
-"cidr_blocks": attribute is set to ["0.0.0.0/0"], allowing outbound traffic to any destination IP address.
+**"cidr_blocks"**: attribute is set to ["0.0.0.0/0"], allowing outbound traffic to any destination IP address.
 
       notepad sec_grp.tf &
 
@@ -88,28 +88,28 @@ vpc_id": attribute is set to the value of the variable "vpcID", specifying the V
 
 ### Step-3: [Create variables.tf file for varibles of main.tf & sec_grp.tf (in HCL file i provided i keep varibles in modules not created separate file]
 
- Here varibles for resource ec2 & security group .
+Here varibles for resource ec2 & security group:
 
      notepad variables.tf &
 
 ![tf-ec2-variables](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/bbc47f63-79ec-4275-8426-65bd68138e51)
 
 
-## TeamA calling module for launch instance 
+## TeamA calling module for launch EC2 Instance 
 
-create main.tf file for plugin with AWS provider , credentials, "module block calling":
+Create main.tf file for plugin with AWS provider, credentials, "module block calling":
 
-✧Here "terraform" block for plugin with AWS provider, "provider" block for credentials (AAWS CLI tool used for access & secret key of AMI user.
+Here "terraform" block for plugin with AWS provider, "provider" block for credentials (AAWS CLI tool used for access & secret key of AMI user.
 
-✦ "module" = block for calling module , 
+**"module"** = block for calling module , 
 
- "source": attribute specifies the relative path to the directory containing the module configuration. In this case, it's "../module/ec2-module".
+**"source"**: attribute specifies the relative path to the directory containing the module configuration. In this case, it's "../module/ec2-module".
 
- "tagname": This module varible for name instance tag.
+**"tagname"**: This module varible for name instance tag.
 
- "OStype": this is for type of instance such t2.micro , t2.large ,etc.
+**"OStype"**: this is for type of instance such t2.micro , t2.large ,etc.
 
- "security_grp_name": this is for name security grp which connect to EC2 instance.
+**"security_grp_name"**: this is for name security grp which connect to EC2 instance.
 
 
 ![tf-TeamA-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/0b228b65-cff4-4568-81e5-128ed7b64d0a)
@@ -143,7 +143,7 @@ Terraform apply cmd for to create entire infrastucture as code:
 
 ## TeamC calling module for launch instance 
 
-create main.tf file for plugin with AWS provider , credentials, "module block calling"
+Create main.tf file for plugin with AWS provider, Credentials,"module block calling"
 
 ![tf-TeamC-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/82bbbe04-4bf6-402c-9cea-c37fe0ac1939)
 
@@ -169,15 +169,15 @@ Also security group is created by TeamA, TeamB, TeamC:
 ![Screenshot 2024-03-26 222831](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/e199424c-f22d-46c5-8ac6-5de68a3f2e9e)
 
 
-security_grp for TeamA :
+**security_grp for TeamA**:
 
 ![Screenshot 2024-03-26 222944](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/a449e0aa-0d7d-4502-84ec-96820d944567)
 
-security_grp for TeamB :
+**security_grp for TeamB**:
 
 ![Screenshot 2024-03-26 223010](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/1da6ffda-36d9-4b16-a495-8c3e8a1e6b09)
 
-security_grp for TeamC :
+**security_grp for TeamC**:
 
 ![Screenshot 2024-03-26 223038](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/7aabc04e-941f-4a7a-9816-b2156ab60e19)
 
