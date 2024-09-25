@@ -8,8 +8,8 @@ This module can be easily invoked by other team members using Terraform module b
 1. "Module-1 for EC2 instance", don't need to define ami_id for instance because here terraform "Data source" is used for retrieving ami_id for instance,
    This is name of ami_id for Free tier amazon linux ami (al2023-ami-*-x86_64); 'variables for name of instance & instance type'.
 2. "Module-2 for aws_security_grp" which allow inbound traffic to EC2; 'variables for VPC id & security grp name'.
-   NOTE: This modules kept in seperate folder and this modules will be called by TeamA, TeamB, TeamC for lanching instance
-4. "calling module block by using module block for launching EC2 instance with security group" for calling I created three Team folder where i put individual 
+   - NOTE: This modules kept in seperate folder and this modules will be called by TeamA, TeamB, TeamC for lanching instance
+3. "calling module block by using module block for launching EC2 instance with security group" for calling I created three Team folder where i put individual 
  plugins info and calling module blocks.
 
 - Follwing is lists of folders for this project:
