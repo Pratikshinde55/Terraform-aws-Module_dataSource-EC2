@@ -3,7 +3,7 @@ This module can be easily invoked by other team members using Terraform module b
 
 ![image](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/7b0f0e91-6dda-4945-be1a-78c5368012d1)
 
-This project for creating infrastructure of following:--
+- This project for creating infrastructure of following:--
 
 1. "Module-1 for EC2 instance", don't need to define ami_id for instance because here terraform "Data source" is used for retrieving ami_id for instance,
   This is name of ami_id for Free tier amazon linux ami (al2023-ami-*-x86_64); 'variables for name of instance & instance type'.
