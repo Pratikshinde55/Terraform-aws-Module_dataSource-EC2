@@ -15,7 +15,7 @@ This project for creating infrastructure of following:--
 4. "calling module block by using module block for launching EC2 instance with security group" for calling I created three Team folder where i put individual 
  plugins info and calling module blocks.
 
-Follwing is lists of folders for this project:
+- Follwing is lists of folders for this project:
 
 Inside the module folder one more folder created named as 'ec2-module' here i kept my Modules.
 
