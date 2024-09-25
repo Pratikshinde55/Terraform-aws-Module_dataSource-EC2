@@ -25,28 +25,26 @@ Inside the module folder one more folder created named as 'ec2-module' here i ke
 
 In module folder only put code of infrastucture & and apply this infrastructure in others folder named as TeamA, TeamB, TeamC.
 
-### Step-1: 
- 
-create main.tf file for ec2 instance and ami_id retrieving data source :
+### Step-1: [Create main.tf file for ec2 instance and ami_id retrieving Data Source]
 
-  In this file contain 'Data source' "aws_ami" for retrieving ami id for instance , The information retrieve before resource creates is known as Data source.
+In this file contain 'Data source' "aws_ami" for retrieving ami id for instance , The information retrieve before resource creates is known as Data source.
 
-  "most_recent": is set to true, indicating that the most recent version of the AMI should be used.
+**"most_recent"**: is set to true, indicating that the most recent version of the AMI should be used.
 
-  "owners": is set to ["amazon"], specifying that only AMIs owned by Amazon should be considered.
+**"owners"**: is set to ["amazon"], specifying that only AMIs owned by Amazon should be considered.
 
-  "Filter": is sub block of data source for specify 'data type' information.
+**"Filter"**: is sub block of data source for specify 'data type' information.
 
-  ✧Three filters are applied for AMIs:
+- Three filters are applied for AMIs:
   
-   AMI name matching the pattern "al2023-ami-*-x86_64".
+AMI name matching the pattern "al2023-ami-*-x86_64".
    
-   Root device type is set to "ebs".
+Root device type is set to "ebs".
    
-   Virtualization type is set to "hvm".
+Virtualization type is set to "hvm".
 
- "ami": attribute of the "aws_instance" resource is being assigned the value of 'data.aws_ami.amazonaminame.id' attribute referance this take ami id form data 
- block.
+**"ami"**: attribute of the "aws_instance" resource is being assigned the value of 'data.aws_ami.amazonaminame.id' attribute referance this take ami id form data 
+block.
 
        notepad main.tf
 
