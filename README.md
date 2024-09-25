@@ -1,10 +1,7 @@
-# Terraform-aws-module-dataSource-
- Creating a Terraform module for deploying secure EC2 instances with proper security configurations, including the utilization of the AWS AMI data source. This 
- module can be easily invoked by other team members using Terraform module blocks
+# Creating a Terraform module for deploying secure EC2 instances with proper security configurations, including the utilization of the AWS AMI data source. 
+This module can be easily invoked by other team members using Terraform module blocks
 
 ![image](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/7b0f0e91-6dda-4945-be1a-78c5368012d1)
-
-
 
 This project for creating infrastructure of following:--
 
@@ -24,11 +21,11 @@ Inside the module folder one more folder created named as 'ec2-module' here i ke
 
 ![image](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/bd7e3d76-90a6-44c4-9db9-12bc1aca5e91)
 
-                                          ❄️ Modules steps are following ❄️
+## Modules steps are following 
 
-  In module folder only put code of infrastucture & and apply this infrastructure in others folder named as TeamA, TeamB, TeamC.
+In module folder only put code of infrastucture & and apply this infrastructure in others folder named as TeamA, TeamB, TeamC.
 
-⚡Step-1:⚡ 
+### Step-1: 
  
 create main.tf file for ec2 instance and ami_id retrieving data source :
 
@@ -48,65 +45,59 @@ create main.tf file for ec2 instance and ami_id retrieving data source :
    
    Virtualization type is set to "hvm".
 
-   "ami": attribute of the "aws_instance" resource is being assigned the value of 'data.aws_ami.amazonaminame.id' attribute referance this take ami id form data 
-   block.
+ "ami": attribute of the "aws_instance" resource is being assigned the value of 'data.aws_ami.amazonaminame.id' attribute referance this take ami id form data 
+ block.
 
-       #notepad main.tf
-
+       notepad main.tf
 
 ![tf-ec2_module_dataSource-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/f80a11e9-fd2b-4037-933a-042c79919846)
 
 
-⚡Step-2:⚡
+### Step-2: [Create tf sec_grp.tf file for security group details , here use loop:]
 
-create tf sec_grp.tf file for security group details , here use loop:
-
-  ✧"aws_security_group" =  AWS security group resource named "allow" is defined for create security group.
+"aws_security_group" =  AWS security group resource named "allow" is defined for create security group.
   
-   "name": attribute is set to "terra_allow_" followed by the value of the variable "security_grp_name", likely creating a unique name for the security group.
+"name": attribute is set to "terra_allow_" followed by the value of the variable "security_grp_name", likely creating a unique name for the security group.
   
-   "description": attribute is set to describe the purpose of the security group.
+"description": attribute is set to describe the purpose of the security group.
 
-   "vpc_id": attribute is set to the value of the variable "vpcID", specifying the VPC in which the security group is to be created.
+vpc_id": attribute is set to the value of the variable "vpcID", specifying the VPC in which the security group is to be created.
 
-  ✧"ingress" = block Inside a dynamic block, the "ingress" block is defined to allow inbound traffic, Dynamic is make to manage ingress block dyanamically. 
+"ingress" = block Inside a dynamic block, the "ingress" block is defined to allow inbound traffic, Dynamic is make to manage ingress block dyanamically. 
   (ingress = inbound rule)
 
-   "for_each": argument iterates over each element in the list of ports. for each is type of loop, var.sgports varible for providing lists of port numbers,
+"for_each": argument iterates over each element in the list of ports. for each is type of loop, var.sgports varible for providing lists of port numbers,
 
-   "iterator": argument assigns a name to the current element in the iteration, which is referenced as "port" within the block.
+"iterator": argument assigns a name to the current element in the iteration, which is referenced as "port" within the block.
 
-   "Content"= block of dynamic block where we put things which want to manage dynamically.
+"Content"= block of dynamic block where we put things which want to manage dynamically.
 
-   "protocol": Specifies the protocol for the traffic, in this case, "tcp.
+"protocol": Specifies the protocol for the traffic, in this case, "tcp.
 
-   "cidr_blocks": Allows traffic from any source IP ("0.0.0.0/0").
+"cidr_blocks": Allows traffic from any source IP ("0.0.0.0/0").
 
-  ✧"egress" = block which control outbound traffic from the instances associated with the security group.
+"egress" = block which control outbound traffic from the instances associated with the security group.
 
-  "from_port" and "to_port": attributes are set to 0, indicating that all ports are allowed for outbound traffic.
+"from_port" and "to_port": attributes are set to 0, indicating that all ports are allowed for outbound traffic.
 
-  "protocol": attribute is set to "-1", indicating that all protocols are allowed for outbound traffic.
+"protocol": attribute is set to "-1", indicating that all protocols are allowed for outbound traffic.
 
-  "cidr_blocks": attribute is set to ["0.0.0.0/0"], allowing outbound traffic to any destination IP address.
+"cidr_blocks": attribute is set to ["0.0.0.0/0"], allowing outbound traffic to any destination IP address.
 
-
-       #notepad sec_grp.tf &
+      notepad sec_grp.tf &
 
 ![tf-sec_grp-module](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/79923a65-b1ac-472a-a642-bbba1f9395df)
 
-⚡Step-3:⚡
-
-create variables.tf file for varibles of main.tf & sec_grp.tf (in HCL file i provided i keep varibles in modules not created separate file:
+### Step-3: [Create variables.tf file for varibles of main.tf & sec_grp.tf (in HCL file i provided i keep varibles in modules not created separate file]
 
  Here varibles for resource ec2 & security group .
 
-    #notepad variables.tf &
+     notepad variables.tf &
 
 ![tf-ec2-variables](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/bbc47f63-79ec-4275-8426-65bd68138e51)
 
 
-                                            ❄️TeamA calling module for launch instance ❄️
+## TeamA calling module for launch instance 
 
 create main.tf file for plugin with AWS provider , credentials, "module block calling":
 
@@ -125,55 +116,50 @@ create main.tf file for plugin with AWS provider , credentials, "module block ca
 
 ![tf-TeamA-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/0b228b65-cff4-4568-81e5-128ed7b64d0a)
 
-terraform init  coomand use to plugin 
+Terraform init  coomand use to plugin: 
 
+     terraform init
 
-       # terraform init
+Terraform apply cmd for to create entire infrastucture as code:
 
-terraform apply cmd for to create entire infrastucture as code:
-
-       #terraform apply
+     terraform apply
 
 ![tf-TeamA-apply](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/c1d47f95-db17-4f9e-9519-ff82d0614b2e)
 
+## TeamB calling module for launch instance
 
-
-                                         ❄️TeamB calling module for launch instance ❄️
-
-create main.tf file for plugin with AWS provider , credentials, "module block calling"
+Create main.tf file for plugin with AWS provider , credentials, "module block calling"
 
 
 ![tf-TeamB-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/5661114d-6f2c-4211-9c7b-6c5c4c7dc2c1)
 
+Terraform init command use to plugins:
 
-terraform init  coomand use to piugins 
+     terraform init
 
-       # terraform init
+Terraform apply cmd for to create entire infrastucture as code:
 
-terraform apply cmd for to create entire infrastucture as code:
-
-       #terraform apply
+     terraform apply
 
 ![tf-TeamB-apply](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/991b9074-d8fc-4123-8b3a-b3b0910a36fe)
 
-
-                                          ❄️TeamC calling module for launch instance ❄️
+## TeamC calling module for launch instance 
 
 create main.tf file for plugin with AWS provider , credentials, "module block calling"
 
 ![tf-TeamC-main tf](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/82bbbe04-4bf6-402c-9cea-c37fe0ac1939)
 
-terraform init  coomand use to piugins 
+Terraform init command use to plugins: 
 
-       # terraform init
+      terraform init
 
-terraform apply cmd for to create entire infrastucture as code:
+Terraform apply cmd for to create entire infrastucture as code:
 
-       #terraform apply
+      terraform apply
        
 ![tf-TeamC-apply](https://github.com/Pratikshinde55/Terraform-aws-module-dataSource-/assets/145910708/6dcfeda5-3499-414c-b988-ebfe2bc5a449)
 
-🌟On AWS console 🌟
+## On AWS console
 
 Instances is lanuched by TeamA, TeamB, TeamC by using Terraform IaC :
 
